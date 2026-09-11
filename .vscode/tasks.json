@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Setup Build Folder",
+            "type": "shell",
+            "command": "New-Item -ItemType Directory -Force -Path \"${workspaceFolder}\\build\"",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build EV Vehicle System",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "main.cpp",
+                "src/Customer.cpp",
+                "src/Vehicle.cpp",
+                "-Iinclude",
+                "-o",
+                "build/EV_VEHICLE_SYSTEM.exe"
+            ],
+            "dependsOn": "Setup Build Folder",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        }
+    ]
+}
