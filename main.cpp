@@ -2,6 +2,8 @@
 
 #include "Customer.h"
 #include "Vehicle.h"
+#include "chargingStation.h"
+#include "charger.h"
 
 using namespace std;
 
@@ -10,6 +12,9 @@ int main() {
 
     Customer c1;
     Vehicle v1;
+    chargingStation chs1;
+    charger ch1;
+
     int choice;
 
 
@@ -22,7 +27,12 @@ int main() {
         cout << "2. Display Customer Details\n";
         cout << "3. Add Vehicle\n";
         cout << "4. Display Vehicle\n";
-        cout << "5. Exit\n\n";
+        cout << "5. Charging Station\n";
+        cout << "6. Display Charging Station\n";
+        cout << "7. Charger\n";
+        cout << "8. Display Charger\n";
+        cout << "9. Exit\n\n";
+        cout << "Enter choice: ";
         cin >> choice;
 
         switch(choice) {
@@ -44,6 +54,22 @@ int main() {
                 break;
 
             case 5:
+                chs1.inputStation();
+                break;
+
+            case 6:
+                chs1.displayStation();
+                break;
+
+            case 7:
+                ch1.inputCharger();
+                break;
+
+            case 8:
+                ch1.displayCharger();
+                break;
+
+            case 9:
                 cout << "\nExiting Program...";
                 break;
 
@@ -52,7 +78,7 @@ int main() {
                 break;
         }
 
-    }while(choice != 5);
+    }while(choice != 9);
 
     return 0;
 }
