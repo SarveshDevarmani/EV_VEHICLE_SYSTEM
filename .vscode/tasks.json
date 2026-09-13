@@ -15,8 +15,11 @@
                 "main.cpp",
                 "src/Customer.cpp",
                 "src/Vehicle.cpp",
+<<<<<<< HEAD
                 "src/Admin.cpp",
                 "src/Maintenance.cpp",
+=======
+>>>>>>> origin/main
                 "src/chargingStation.cpp",
                 "src/charger.cpp",
                 "-Iinclude",
@@ -34,6 +37,7 @@
             "options": {
                 "cwd": "${workspaceFolder}"
             }
+            
         }
     ]
 }
