@@ -15,6 +15,10 @@
                 "main.cpp",
                 "src/Customer.cpp",
                 "src/Vehicle.cpp",
+                "src/Admin.cpp",
+                "src/Maintenance.cpp",
+                "src/chargingStation.cpp",
+                "src/charger.cpp",
                 "-Iinclude",
                 "-o",
                 "build/EV_VEHICLE_SYSTEM.exe"
