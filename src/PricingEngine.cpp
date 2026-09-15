@@ -1,25 +1,19 @@
-#include<iostream>
+#include "PricingEngine.h"
+#include <iostream>
+
 using namespace std;
 
-class PricingEngine{
- 
-   private:
-    double normalRate;
-    double peakRate;
-    double offPeakRate;
-
-   public:
-     PricingEngine(){
+    PricingEngine:: PricingEngine(){
         normalRate=10;
         peakRate=15;
         offPeakRate=8;
      }
-     void setRate(double normal,double peak,double off ){
+     void PricingEngine::setRate(double normal,double peak,double off ){
         normalRate=normal;
         peakRate=peak;
         offPeakRate=off;
      }
-     double calculateCharge(double energyConsumed,int timeType){
+     double PricingEngine::calculateCharge(double energyConsumed,int timeType){
         double rate;
 
         if(timeType==1){
@@ -33,24 +27,18 @@ class PricingEngine{
         }
         return energyConsumed*rate;
      }
-double getNormalRate()
+double PricingEngine::getNormalRate()
     {
         return normalRate;
     }
 
-    double getPeakRate()
+    double PricingEngine::getPeakRate()
     {
         return peakRate;
     }
 
-    double getOffPeakRate()
+    double PricingEngine::getOffPeakRate()
     {
         return offPeakRate;
     }
 
-
-};
-
-int main(){
-
-}
