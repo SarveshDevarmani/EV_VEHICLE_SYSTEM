@@ -19,6 +19,10 @@
                 "src/Maintenance.cpp",
                 "src/chargingStation.cpp",
                 "src/charger.cpp",
+                "src/ChargingSession.cpp",
+                "src/Payment.cpp",
+                "src/PricingEngine.cpp",
+                "src/Booking.cpp",
                 "-Iinclude",
                 "-o",
                 "build/EV_VEHICLE_SYSTEM.exe"
