@@ -23,11 +23,13 @@ void Vehicle::inputVehicle() {
 	cout << "Enter Vehicle Type: ";
 	cin >> type;
 
-	cout << "Enter Battery Capacity: ";
+	cout << "Enter Battery Capacity(kWh): ";
 	cin >> batteryCapacity;
 
-	cout << "Enter Current SOC: ";
+	cout << "Enter Current SOC(%): ";
 	cin >> currentSOC;
+
+	cout << "\nVehicle added successfully!\n";
 }
 
 void Vehicle::displayVehicle() const {
@@ -37,4 +39,33 @@ void Vehicle::displayVehicle() const {
 	cout << "Vehicle Type: " << type << '\n';
 	cout << "Vehicle Battery Capacity: " << batteryCapacity << '\n';
 	cout << "Vehicle Current SOC: " << currentSOC << '\n';
+}
+
+void Vehicle::updateSOC(double newSOC) {
+	if(newSOC >= 0 && newSOC <= 100) {
+		currentSOC = newSOC;
+		cout << "\nSOC updated successfully!\n";
+	} else {
+		cout << "\nInvalid SOC! Enter value between 0 and 100.\n";
+	}
+}
+
+double Vehicle::calculateChargingTime(double chargerPower) {
+	if(chargerPower <= 0) {
+		cout << "\nInvalid charger power!\n";
+		return 0;
+	}
+
+	double requiredEnergy = batteryCapacity * (100-currentSOC) / 100;
+	double chargingTime = requiredEnergy / chargerPower;
+
+	return chargingTime;
+}
+
+double Vehicle::getBatteryCapacity() {
+	return batteryCapacity;
+}
+
+double Vehicle::getCurrentSOC() {
+	return currentSOC;
 }

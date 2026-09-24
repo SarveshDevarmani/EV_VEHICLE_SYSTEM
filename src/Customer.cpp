@@ -37,3 +37,11 @@ void Customer::displayCustomer() const {
     cout << "Customer Email: " << email << '\n';
     cout << "Customer Mobile Number: " << phone << '\n';
 }
+
+bool Customer::login(string enteredEmail, string enteredPassword) {
+    if(email == enteredEmail && password == enteredPassword) {
+        return true;
+    } else {
+        return false;
+    }
+}

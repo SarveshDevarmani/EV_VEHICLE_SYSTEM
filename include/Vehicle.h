@@ -18,6 +18,10 @@ public:
 
     void inputVehicle();
     void displayVehicle() const;
+    void updateSOC(double newSOC);
+    double calculateChargingTime(double chargerPower);
+    double getBatteryCapacity();
+    double getCurrentSOC();
 };
 
 #endif
