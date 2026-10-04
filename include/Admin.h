@@ -8,8 +8,8 @@ class Admin
 private:
     int adminId;
     string name;
-    string email;
-    string password;
+    string email = "admin@123";
+    string password = "123";
 
 public:
     Admin();

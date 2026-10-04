@@ -5,17 +5,18 @@ using namespace std;
 
 Admin::Admin()
 {
-    adminId = 0;
-    name = "";
-    email = "";
-    password = "";
+    adminId = 1;
+    name = "Admin";
+    email = "admin@123";
+    password = "123";
 }
+
 bool Admin::login(string email, string password)
 {
 
     if (this->email == email && this->password == password)
     {
-        cout << "Login Successfull" << endl;
+        cout << "Login Successful" << endl;
         return true;
     }
 
