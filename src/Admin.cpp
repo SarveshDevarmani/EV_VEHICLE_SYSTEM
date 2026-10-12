@@ -6,6 +6,7 @@
 #include "charger.h"
 #include "chargingStation.h"
 #include "CustomerData.h"
+#include "Customer.h"
 
 using namespace std;
 
