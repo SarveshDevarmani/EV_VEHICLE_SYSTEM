@@ -1,21 +1,26 @@
+
 #ifndef CHARGINGSTATION_H
 #define CHARGINGSTATION_H
 
-#include<string>
+#include <string>
 using namespace std;
 
-class chargingStation {
-    private:
-        int stationId;
-        string stationName;
-        string location;
-        double totalCharges;    
-    
-    public:
+class chargingStation
+{
+private:
+    int stationId;
+    string stationName;
+    string location;
+    double totalCharges;
 
-        chargingStation();
-        void inputStation();
-        void displayStation() const;
+public:
+    chargingStation();
+
+    void inputStation();
+    void displayStation() const;
+    void updateStationDetails();
+
+    int getStationId() const;
 };
 
 #endif
