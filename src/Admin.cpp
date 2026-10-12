@@ -759,3 +759,28 @@ void Admin::manageStations()
 
     } while (choice != 6);
 }
+
+int Admin::getStationCount() const
+{
+    return stationCount;
+}
+
+const chargingStation& Admin::getStation(int index) const
+{
+    return stations[index];
+}
+
+int Admin::getChargerCount() const
+{
+    return static_cast<int>(chargers.size());
+}
+
+charger& Admin::getCharger(int index)
+{
+    return chargers.at(index);
+}
+
+const charger& Admin::getCharger(int index) const
+{
+    return chargers.at(index);
+}

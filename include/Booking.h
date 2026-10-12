@@ -1,8 +1,8 @@
+
 #ifndef BOOKING_H
 #define BOOKING_H
 
 #include <string>
-
 using namespace std;
 
 class Booking
@@ -17,10 +17,31 @@ private:
     string status;
 
 public:
+    Booking();
+
     void createBooking();
-    void displayBooking();
+
+    void createBooking(
+        int bId,
+        int cId,
+        int vId,
+        int chId,
+        string bookingDate,
+        string bookingTime
+    );
+
+    void displayBooking() const;
     void cancelBooking();
-    void checkBookingStatus();
+    void checkBookingStatus() const;
+
+    int getBookingId() const;
+    int getCustomerId() const;
+    int getVehicleId() const;
+    int getChargerId() const;
+
+    string getDate() const;
+    string getTime() const;
+    string getStatus() const;
 };
 
 #endif

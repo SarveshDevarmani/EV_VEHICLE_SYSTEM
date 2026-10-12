@@ -1,49 +1,50 @@
-#include "Customer.h"
 
 #include <iostream>
+#include "Customer.h"
 
 using namespace std;
 
-Customer::Customer(){
+Customer::Customer()
+{
     customerId = 0;
     name = "";
     email = "";
     phone = "";
     password = "";
 }
-void Customer::inputCustomer() {
-    cout << "Enter Customer ID: ";
+
+void Customer::inputCustomer()
+{
+    cout << "\nEnter Customer ID: ";
     cin >> customerId;
 
-    cout << "Enter Customer Name: ";
+    cout << "Enter Name: ";
     cin >> name;
 
-    cout << "Enter Customer Email: ";
+    cout << "Enter Email: ";
     cin >> email;
 
-    cout << "Enter Customer Mobile Number: ";
+    cout << "Enter Mobile Number: ";
     cin >> phone;
 
-    cout << "Enter Customer Password: ";
+    cout << "Enter Password: ";
     cin >> password;
 
     cout << "\nCustomer Registered Successfully!\n";
 }
 
-void Customer::displayCustomer() const {
-    cout << "\n========== Customer Details ==============\n";
-    cout << "Customer ID: " << customerId << '\n';
-    cout << "Customer Name: " << name << '\n';
-    cout << "Customer Email: " << email << '\n';
-    cout << "Customer Mobile Number: " << phone << '\n';
+void Customer::displayCustomer() const
+{
+    cout << "\nCustomer ID: " << customerId;
+    cout << "\nName: " << name;
+    cout << "\nEmail: " << email;
+    cout << "\nMobile: " << phone << endl;
 }
 
-bool Customer::login(string enteredEmail, string enteredPassword) {
-    if(email == enteredEmail && password == enteredPassword) {
-        return true;
-    } else {
-        return false;
-    }
+bool Customer::login(string enteredEmail, string enteredPassword)
+{
+    return email == enteredEmail &&
+           password == enteredPassword;
 }
 
 int Customer::getCustomerId() const

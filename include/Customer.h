@@ -1,11 +1,12 @@
+
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 
 #include <string>
-
 using namespace std;
 
-class Customer {
+class Customer
+{
 private:
     int customerId;
     string name;
@@ -15,12 +16,13 @@ private:
 
 public:
     Customer();
-  
+
     void inputCustomer();
     void displayCustomer() const;
+
     bool login(string enteredEmail, string enteredPassword);
+
     int getCustomerId() const;
-    
 };
 
 #endif
