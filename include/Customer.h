@@ -19,6 +19,8 @@ public:
     void inputCustomer();
     void displayCustomer() const;
     bool login(string enteredEmail, string enteredPassword);
+    int getCustomerId() const;
+    
 };
 
 #endif

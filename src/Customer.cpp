@@ -45,3 +45,8 @@ bool Customer::login(string enteredEmail, string enteredPassword) {
         return false;
     }
 }
+
+int Customer::getCustomerId() const
+{
+    return customerId;
+}

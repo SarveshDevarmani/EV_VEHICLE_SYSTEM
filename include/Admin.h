@@ -26,7 +26,11 @@ public:
     bool login(string email, string password);
     void displayMenu();
 
-    void manageCustomers();
+   void manageCustomers();
+    void viewAllCustomers();
+    void searchCustomer(int id);
+    void deleteCustomer(int id);
+    
     void manageStations();
     void ManageChargers();
 };

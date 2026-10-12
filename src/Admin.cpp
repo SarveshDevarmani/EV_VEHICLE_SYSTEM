@@ -5,6 +5,7 @@
 #include <vector>
 #include "charger.h"
 #include "chargingStation.h"
+#include "CustomerData.h"
 
 using namespace std;
 
@@ -85,7 +86,100 @@ void Admin::displayMenu()
 
 void Admin::manageCustomers()
 {
-    cout << "\nCustomer Management Selected." << endl;
+    int choice;
+
+    do
+    {
+        cout << "\n===== MANAGE CUSTOMERS =====\n";
+        cout << "1. View All Customers\n";
+        cout << "2. Search Customer by ID\n";
+        cout << "3. Delete Customer by ID\n";
+        cout << "4. Back to Admin Menu\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+            case 1:
+                cout << "\nDEBUG: View All Customers selected\n";
+                viewAllCustomers();
+                break;
+
+            case 2:
+            {
+                int id;
+                cout << "Enter Customer ID to search: ";
+                cin >> id;
+                searchCustomer(id);
+                break;
+            }
+
+            case 3:
+            {
+                int id;
+                cout << "Enter Customer ID to delete: ";
+                cin >> id;
+                deleteCustomer(id);
+                break;
+            }
+
+            case 4:
+                cout << "\nReturning to Admin Menu...\n";
+                break;
+
+            default:
+                cout << "\nInvalid choice!\n";
+        }
+
+    } while (choice != 4);
+}
+
+void Admin::viewAllCustomers()
+{
+    cout << "DEBUG - Admin vector size: " << customers.size() << endl;
+    if (customers.empty())
+    {
+        cout << "\nNo customers registered yet.\n";
+        return;
+    }
+
+    cout << "\n===== ALL CUSTOMERS =====\n";
+
+    for (const Customer& c : customers)
+    {
+        c.displayCustomer();
+        cout << "-------------------------\n";
+    }
+}
+
+void Admin::searchCustomer(int id)
+{
+    for (const Customer& c : customers)
+    {
+        if (c.getCustomerId() == id)
+        {
+            cout << "\n===== CUSTOMER FOUND =====\n";
+            c.displayCustomer();
+            return;
+        }
+    }
+
+    cout << "\nCustomer not found!\n";
+}
+
+void Admin::deleteCustomer(int id)
+{
+    for (auto it = customers.begin(); it != customers.end(); ++it)
+    {
+        if (it->getCustomerId() == id)
+        {
+            customers.erase(it);
+            cout << "\nCustomer deleted successfully!\n";
+            return;
+        }
+    }
+
+    cout << "\nCustomer not found!\n";
 }
 
 // ==================== CHARGER MANAGEMENT ====================
