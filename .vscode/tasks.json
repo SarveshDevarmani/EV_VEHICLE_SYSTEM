@@ -23,6 +23,7 @@
                 "src/Payment.cpp",
                 "src/PricingEngine.cpp",
                 "src/Booking.cpp",
+                "src/CustomerData.cpp",
                 "-Iinclude",
                 "-o",
                 "build/EV_VEHICLE_SYSTEM.exe"
