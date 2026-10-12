@@ -26,6 +26,20 @@ void charger::inputCharger() {
 
     status = true;
 
+
+}
+charger::charger(int id, int station, string type, double kw)
+{
+    chargerId = id;
+    stationId = station;
+    chargerType = type;
+    power = kw;
+    status = true;
+}
+
+int charger::getStationId() const
+{
+    return stationId;
 }
 
 void charger::displayCharger() const{
@@ -42,7 +56,10 @@ void charger::displayCharger() const{
     }
 
 }
-
+int charger::getChargerId() const
+{
+    return chargerId;
+}
 void charger::updateStatus(bool newStatus) {
     status = newStatus;
 }

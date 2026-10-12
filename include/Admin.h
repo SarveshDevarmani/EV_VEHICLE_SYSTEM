@@ -2,6 +2,8 @@
 #define ADMIN_H
 
 #include <string>
+#include <vector>
+#include "charger.h"
 #include "chargingStation.h"
 
 using namespace std;
@@ -14,6 +16,7 @@ private:
     string email;
     string password;
 
+    vector<charger> chargers;
     chargingStation stations[100];
     int stationCount;
 

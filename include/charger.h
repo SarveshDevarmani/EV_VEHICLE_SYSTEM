@@ -12,12 +12,20 @@ class charger {
         double power;
         bool status;
 
-    public:
-        charger();
-        void inputCharger();
-        void displayCharger() const;
-        void updateStatus(bool newStatus);
-        bool checkAvailability();
+   
+        
+public:
+    charger();
+    charger(int id, int stationId, string type, double power);
+
+    void inputCharger();
+    void displayCharger() const;
+    int getChargerId() const;
+    int getStationId() const;
+    void updateStatus(bool newStatus);
+    bool checkAvailability();
+
 };
+
 
 #endif
